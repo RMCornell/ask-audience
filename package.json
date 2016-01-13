@@ -1,0 +1,28 @@
+{
+  "name": "ask-the-audience",
+  "version": "1.0.0",
+  "description": "WebSocket Tutorial",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RMCornell/ask-audience.git"
+  },
+  "keywords": [
+    "Websockets"
+  ],
+  "author": "Robert M. Cornell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RMCornell/ask-audience/issues"
+  },
+  "homepage": "https://github.com/RMCornell/ask-audience#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "lodash": "^4.0.0",
+    "socket.io": "^1.4.4"
+  }
+}
