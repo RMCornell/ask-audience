@@ -41,8 +41,11 @@ const io = socketIO(server);
 io.on('connection', function(socket) {
   console.log('User has connected.', io.engine.clientsCount);
 
-  // Emit connection count to the client
+  // Emit connection count to all clients io.sockets.emit
   io.sockets.emit('usersConnected', io.engine.clientsCount);
+
+  // Emit Message to a single client socket.emit
+  socket.emit('statusMessage', 'You have Connected');
 
   // Make note of when user disconnects
   socket.on('disconnect', function() {
