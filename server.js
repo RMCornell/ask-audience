@@ -36,6 +36,9 @@ var server = http.createServer(app).listen(port, function() {
 const socketIO = require('socket.io');
 const io = socketIO(server);
 
+// Declare Empty Object for collecting votes
+var votes = {};
+
 // Set up Event Listener for connection on server
 // Add ability to display connection count
 io.on('connection', function(socket) {
@@ -46,6 +49,19 @@ io.on('connection', function(socket) {
 
   // Emit Message to a single client socket.emit
   socket.emit('statusMessage', 'You have Connected');
+
+  // Create listener on server side to receive info from client
+  socket.on('message', function(channel, message) {
+    console.log(channel, message);
+  });
+
+  // Store Votes
+  socket.on('message', function(channel, message) {
+    if(channel === 'voteCast') {
+      votes[socket.id] = message;
+      console.log(votes)
+    }
+  });
 
   // Make note of when user disconnects
   socket.on('disconnect', function() {

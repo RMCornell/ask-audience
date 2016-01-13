@@ -3,8 +3,20 @@
     <title>WebSockets Tutorial</title>
   </head>
 <body>
+  <!--Add Div to display status message-->
   <div id="status-message"></div>
+
+  <!--Add div to display connection count-->
   <div id="connection-count"></div>
+
+  <!--Add div to return choices from client to server-->
+  <div id="choices">
+    <button>A</button>
+    <button>B</button>
+    <button>C</button>
+    <button>D</button>
+  </div>
+
 <!-- Make sure your JS is at the bottom of the body! -->
   <script src="/socket.io/socket.io.js"></script>
   <script src="/client.js"></script>
